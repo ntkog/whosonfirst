@@ -27,7 +27,7 @@ info() { echo -e "\e[33m[$1]\t\e[0m $2" >&2; }
 err() { echo -e "\e[31m[$1]\t\e[0m \e[91m$2\e[0m" >&2; }
 extract_file() {
   info 'whosonfirst-sqlite-decompress' "${LOCAL_BZ2_PATH}"
-  bunzip2 -f "${LOCAL_BZ2_PATH}" > "${LOCAL_DB_PATH}"
+  lbzip2 -d "${LOCAL_BZ2_PATH}" > "${LOCAL_DB_PATH}"
 }
 generate_timestamp() {
   printf "@" > "${LOCAL_TS_PATH}" # date command requires @ prefix
