@@ -50,7 +50,7 @@ function download(callback) {
   const generateCommand = (sqlite, directory) => {
     let extract;
     if (/\.db\.bz2$/.test(sqlite.name_compressed)) {
-      extract = `bunzip2`;
+      extract = `lbzip2 -d`;
     } else if(/\.db\.tar\.bz2$/.test(sqlite.name_compressed)) {
       extract = `tar -xjO`;
     } else {
